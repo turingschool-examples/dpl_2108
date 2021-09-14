@@ -53,8 +53,20 @@ pry(main)> charlotte_bronte.books
 #=> []
 
 pry(main)> jane_eyre = charlotte_bronte.write("Jane Eyre", "October 16, 1847")
- 
+#=> #<Book:0x00007fb896e22538...>
+
+pry(main)> jane_eyre.title
+#=> "Jane Eyre"
+
+pry(main)> charlotte_bronte.publish(jane_eyre)
+
+pry(main)> charlotte_bronte.books
+#=> [#<Book:0x00007fb896e22538...>]
+
 pry(main)> villette = charlotte_bronte.write("Villette", "1853")
+#=> #<Book:0x00007fb8980aaca0...>
+
+pry(main)> charlotte_bronte.publish(villette)
 
 pry(main)> charlotte_bronte.books
 #=> [#<Book:0x00007fb896e22538...>, #<Book:0x00007fb8980aaca0...>]
@@ -99,11 +111,19 @@ pry(main)> professor = charlotte_bronte.write("The Professor", "1857")
 pry(main)> villette = charlotte_bronte.write("Villette", "1853")
 #=> #<Book:0x00007fbeea24fbe8...>
 
+pry(main)> charlotte_bronte.publish(jane_eyre)
+
+pry(main)> charlotte_bronte.publish(professon)
+
+pry(main)> charlotte_bronte.publish(villette)
+
 pry(main)> harper_lee = Author.new({first_name: "Harper", last_name: "Lee"})
 #=> #<Author:0x00007fbeea112730...>
 
 pry(main)> mockingbird = harper_lee.write("To Kill a Mockingbird", "July 11, 1960")
 #=> #<Book:0x00007fbeeb1089f0...>
+
+pry(main)> harper_lee.publish(mockingbird)
 
 pry(main)> dpl.add_author(charlotte_bronte)
 
@@ -153,11 +173,17 @@ pry(main)> jane_eyre = charlotte_bronte.write("Jane Eyre", "October 16, 1847")
 pry(main)> villette = charlotte_bronte.write("Villette", "1853")
 #=> #<Book:0x00007f8c021d84c8...>
 
+pry(main)> charlotte_bronte.publish(jane_eyre)
+
+pry(main)> charlotte_bronte.publish(villette)
+
 pry(main)> harper_lee = Author.new({first_name: "Harper", last_name: "Lee"})
 #=> #<Author:0x00007f8c01442520...>
 
 pry(main)> mockingbird = harper_lee.write("To Kill a Mockingbird", "July 11, 1960")
 #=> #<Book:0x00007f8c019506c0...>
+
+pry(main)> harper_lee.publish(mockingbird)
 
 # This book cannot be checked out because it doesn't exist in the library
 pry(main)> dpl.checkout(mockingbird)
