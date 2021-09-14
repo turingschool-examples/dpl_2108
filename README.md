@@ -52,12 +52,14 @@ pry(main)> charlotte_bronte.name
 pry(main)> charlotte_bronte.books
 #=> []
 
-pry(main)> jane_eyre = charlotte_bronte.write("Jane Eyre", "October 16, 1847")
-#=> #<Book:0x00007fb896e22538...>
+#Do not write a test for these two interactions. This is just to show you that the first part of write should be creating a book.
+   pry(main)> jane_eyre = charlotte_bronte.write("Jane Eyre", "October 16, 1847")
+   #=> #<Book:0x00007fb896e22538...>
 
-pry(main)> jane_eyre.title
-#=> "Jane Eyre"
-
+   pry(main)> jane_eyre.title
+   #=> "Jane Eyre"
+ 
+#Start writing tests again here: 
 pry(main)> villette = charlotte_bronte.write("Villette", "1853")
 #=> #<Book:0x00007fb8980aaca0...>
 
