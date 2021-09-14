@@ -113,7 +113,7 @@ pry(main)> villette = charlotte_bronte.write("Villette", "1853")
 
 pry(main)> charlotte_bronte.publish(jane_eyre)
 
-pry(main)> charlotte_bronte.publish(professon)
+pry(main)> charlotte_bronte.publish(professor)
 
 pry(main)> charlotte_bronte.publish(villette)
 
