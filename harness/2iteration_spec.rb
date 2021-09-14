@@ -28,10 +28,23 @@ RSpec.describe 'Iteration 2' do
     expect(jane_eyre).to be_an_instance_of(Book)
     expect(jane_eyre.title).to eq('Jane Eyre')
     expect(jane_eyre.publication_year).to eq('1847')
-    expect(@charlotte_bronte.books).to eq([jane_eyre])
+
     villette = @charlotte_bronte.write("Villette", "1853")
     expect(villette.title).to eq('Villette')
     expect(villette.publication_year).to eq('1853')
+  end
+
+  it '5. Author #publish' do
+    jane_eyre = @charlotte_bronte.write("Jane Eyre", "October 16, 1847")
+    villette = @charlotte_bronte.write("Villette", "1853")
+
+    expect(@charlotte_bronte).to respond_to(:publish).with(1).argument
+    expect(@charlotte_bronte.books).to eq([])
+
+    @charlotte_bronte.publish(jane_eyre)
+    expect(@charlotte_bronte.books).to eq([jane_eyre])
+
+    @charlotte_bronte.publish(villette)
     expect(@charlotte_bronte.books).to eq([jane_eyre, villette])
   end
 end
