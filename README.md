@@ -55,9 +55,6 @@ pry(main)> charlotte_bronte.books
 pry(main)> jane_eyre = charlotte_bronte.write("Jane Eyre", "October 16, 1847")
 #=> #<Book:0x00007fb896e22538...>
 
-pry(main)> jane_eyre.class
-#=> Book
-
 pry(main)> jane_eyre.title
 #=> "Jane Eyre"
 
