@@ -17,4 +17,8 @@ attr_reader :name,
       publication_date: date
     })
   end
+
+  def publish(book)
+    books << book
+  end
 end
