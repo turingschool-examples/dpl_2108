@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Author
   attr_reader :name,
               :books
@@ -9,14 +11,14 @@ class Author
   end
 
   def name
-    @first_name + " " + @last_name
+    "#{@first_name} #{@last_name}"
   end
 
   def write(title, date)
-    data = {author_first_name: @first_name,
-            author_last_name: @last_name,
-            title: title,
-            publication_date: date}
+    data = { author_first_name: @first_name,
+             author_last_name: @last_name,
+             title: title,
+             publication_date: date }
     Book.new(data)
   end
 
@@ -26,9 +28,7 @@ class Author
 
   def publication_range
     pub_hash = {}
-    years = books.map do |book|
-      book.publication_year
-    end
+    years = books.map(&:publication_year)
     pub_hash[:start]  = years.min
     pub_hash[:end]    = years.max
     pub_hash

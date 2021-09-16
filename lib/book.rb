@@ -1,7 +1,7 @@
+# frozen_string_literal: true
+
 class Book
-  attr_reader   :title,
-                :author,
-                :publication_year
+  attr_reader   :title
   attr_accessor :times_checked_out
 
   def initialize(data)
@@ -13,7 +13,7 @@ class Book
   end
 
   def author
-    @author_first_name +  ' ' + @author_last_name
+    "#{@author_first_name} #{@author_last_name}"
   end
 
   def publication_year

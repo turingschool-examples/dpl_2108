@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require './lib/book'
 
 class Library
@@ -25,8 +27,7 @@ class Library
   end
 
   def checkout(book)
-    if
-      @books.include?(book)
+    if @books.include?(book)
       book.times_checked_out += 1
       @checked_out_books << @books.delete(book)
       true
@@ -42,8 +43,6 @@ class Library
 
   def most_popular_book
     check = @checked_out_books + @books
-    check.max_by do |book|
-      book.times_checked_out
-    end
+    check.max_by(&:times_checked_out)
   end
 end
