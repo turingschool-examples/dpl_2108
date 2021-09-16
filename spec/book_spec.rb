@@ -29,6 +29,21 @@ describe Book do
       expect(book.title).to eq("To Kill a Mockingbird")
       expect(book.publication_year).to eq('1960')
     end
+
+    it 'has readable attributes_2' do
+      book_info_2 = {
+                    author_first_name: "Jacob",
+                    author_last_name: "Yar",
+                    title: "test",
+                    publication_date: "1965"
+                   }
+      book_2 = Book.new(book_info_2)
+
+      expect(book_2.author_first_name).to eq("Jacob")
+      expect(book_2.author_last_name).to eq("Yar")
+      expect(book_2.title).to eq("test")
+      expect(book_2.publication_year).to eq("1965")
+    end
   end
 
 end
