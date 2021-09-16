@@ -4,7 +4,6 @@ class Library
               :authors,
               :checked_out_books
 
-
   def initialize(name)
     @name              = name
     @books             = []
@@ -21,15 +20,12 @@ class Library
   end
 
   def publication_time_frame_for(author)
-    years = []
-    author.books.each do |book|
-      years << book.publication_year.to_i
+    years = author.books.map do |book|
+      book.publication_year.to_i
     end
 
-    time_frame_hash = {
-                      start: years.min.to_s,
-                      end: years.max.to_s
-                      }
+    time_frame_hash = {start: years.min.to_s, end: years.max.to_s}
+
     time_frame_hash
   end
 
