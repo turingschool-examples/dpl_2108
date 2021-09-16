@@ -24,4 +24,8 @@ class Author
     Book.new(book_info)
   end
 
+  def publish(book)
+    @book_array.push(book)
+  end
+
 end
