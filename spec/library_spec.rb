@@ -9,10 +9,11 @@ describe Library do
     expect(dpl).to be_an_instance_of(Library)
   end
 
-  xit 'attributes' do
-    whatever = Whatever.new(what, ever)
-    expect(whatever.first_thing).to eq('what')
-    expect(theater.second_thing).to eq('ever')
+  it 'attributes' do
+    dpl = Library.new("Denver Public Library")
+    expect(dpl.name).to eq("Denver Public Library")
+    expect(dpl.books).to eq([])
+    expect(dpl.authors).to eq([])
   end
 
   xit 'does things' do
