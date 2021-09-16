@@ -1,18 +1,32 @@
 require 'rspec'
-require './lib/whatever'
+require './lib/book'
 
-describe Whatever do
+describe Book do
+
   it 'exists' do
-    whatever = Whatever.new(what, ever)
+
+    book = Book.new({author_first_name: "Harper", author_last_name: "Lee",
+            title: "To Kill a Mockingbird", publication_date: "July 11, 1960"})
+
     expect(whatever).to be_an_instance_of(Whatever)
   end
 
-  it 'attributes' do
-    whatever = Whatever.new(what, ever)
-    expect(whatever.first_thing).to eq('what')
-    expect(theater.second_thing).to eq('ever')
+  it 'has readable attributes' do
+
+    book = Book.new({author_first_name: "Harper", author_last_name: "Lee",
+            title: "To Kill a Mockingbird", publication_date: "July 11, 1960"})
+
+    expect(book.title).to eq('To Kill a Mockingbird')
+    expect(book.author).to eq("Harper Lee")
+
   end
 
-  it 'does things' do
+  it 'returns publication year' do
+
+    book = Book.new({author_first_name: "Harper", author_last_name: "Lee",
+            title: "To Kill a Mockingbird", publication_date: "July 11, 1960"})
+
+    expect(book.publication_year).to eq('1960')
+
   end
 end
