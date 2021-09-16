@@ -15,11 +15,18 @@ class Library
     @authors.map do |author|
       @books << author.books
     end
-    require "pry"; binding.pry
+
     @books.flatten
   end
 
   def publication_time_frame_for(name)
 
+    books = @authors.map do |author|
+      author.books.map do|book|
+        book.publication_year
+      end
+    end
+
+    
   end
 end
