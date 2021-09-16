@@ -21,4 +21,11 @@ attr_reader :name,
   def publish(book)
     books << book
   end
+
+  def min_max_year
+    years = @books.map do |book|
+      book.publication_year
+    end
+    years.minmax
+  end
 end
