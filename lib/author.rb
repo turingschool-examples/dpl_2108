@@ -13,4 +13,8 @@ class Author
   def write(title, publication_date)
     Book.new({:title => title, :publication_date => publication_date})
   end
+
+  def publish(book)
+    @books << book
+  end
 end
