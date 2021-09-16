@@ -31,4 +31,13 @@ describe Book do
     end
   end
 
+  describe '#pub_year' do
+    it 'returns date from a date string' do
+      book = Book.new(@book_info)
+
+      expect(book.pub_year('October 25th, 1955')).to eq('1955')
+      expect(book.pub_year('2010')).to eq('2010')
+    end
+  end
+
 end
