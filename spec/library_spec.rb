@@ -70,7 +70,6 @@ describe Library do
     expect(author_1).to eq({:start=>"1847", :end=>"1857"})
 
     author_2 = @dpl.publication_time_frame_for(harper_lee)
-
     expect(author_2).to eq({:start=>"1960", :end=>"1960"})
   end
 end

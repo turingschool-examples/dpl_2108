@@ -18,7 +18,7 @@ class Author
     Book.new({first_name: @first_name,
               last_name: @last_name,
               title: title,
-              date: date
+              publication_date: date
             })
   end
 

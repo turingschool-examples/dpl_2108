@@ -15,6 +15,6 @@ class Book
   end
 
   def publication_year
-    @publication_date.slice(-4..-1)
+    @publication_date = publication_date.slice(-4..-1)
   end
 end
