@@ -29,6 +29,14 @@ describe Author do
     end
   end
 
+  describe '#books' do
+    it 'returns an array of books the author wrote' do
+      charlotte_bronte = Author.new(@author_info)
+
+      expect(charlotte_bronte.books).to eq([])
+    end
+  end
+
   describe '#write' do
     it 'creates a Book instance' do
       charlotte_bronte = Author.new(@author_info)
@@ -41,12 +49,16 @@ describe Author do
     end
   end
 
-  describe '#books' do
-    xit 'returns an array of books the author wrote' do
-      author = Author.new(@author_info)
+  describe '#publish' do
+    it 'pushes the book being published to the books array' do
+      charlotte_bronte = Author.new(@author_info)
+      jane_eyre = charlotte_bronte.write("Jane Eyre", "October 16, 1847")
+      charlotte_bronte.publish(jane_eyre)
 
-      expect(charlotte_bronte.books).to eq([book_1, book_2])
+      expect(charlotte_bronte.books).to eq([jane_eyre])
     end
   end
+
+
 
 end
