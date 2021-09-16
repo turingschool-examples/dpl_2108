@@ -13,4 +13,8 @@ class Book
   def author
     @author_first_name + " " + @author_last_name
   end
+
+  def publication_year
+    @publication_date.slice(-4..-1)
+  end
 end
