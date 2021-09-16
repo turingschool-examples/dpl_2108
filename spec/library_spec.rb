@@ -59,19 +59,53 @@ describe Library do
     expect(dpl.publication_time_frame_for(harper_lee)).to eq({:start=>"1960", :end=>"1960"})
   end
 
-  xit 'can checkout books' do
+  xit 'can manage an inventory of checked out books' do
+    dpl = Library.new("Denver Public Library")
+    charlotte_bronte = Author.new({first_name: "Charlotte", last_name: "Bronte"})
+    jane_eyre = charlotte_bronte.write("Jane Eyre", "October 16, 1847")
+    villette = charlotte_bronte.write("Villette", "1853")
 
-  end
+    charlotte_bronte.publish(jane_eyre)
+    charlotte_bronte.publish(villette)
 
-  xit 'can return a lits of checked out books' do
+    harper_lee = Author.new({first_name: "Harper", last_name: "Lee"})
+    mockingbird = harper_lee.write("To Kill a Mockingbird", "July 11, 1960")
 
-  end
+    harper_lee.publish(mockingbird)
 
-  xit 'can return a book' do
+    expect(dpl.checkout(mockingbird)).to eq false
+    expect(dpl.checkout(jane_eyre)).to eq false
 
+    dpl.add_author(charlotte_bronte)
+    dpl.add_author(harper_lee)
+
+    expect(dpl.checkout(jane_eyre)).to eq true
+
+    expect(dpl.checked_out_books).to eq([jane_eyre])
+
+    expect(dpl.checkout(jane_eyre)).to eq false
+
+    dpl.return(jane_eyre)
+
+    expect(dpl.checked_out_books).to eq([])
+
+    expect(dpl.checkout(jane_eyre)).to eq true
+    expect(dpl.checkout(villette)).to eq true
+
+    expect(dpl.checked_out_books).to eq([jane_eyre, villette])
+    expect(dpl.checkout(mockingbird)).to eq true
+
+    dpl.return(mockingbird)
+
+    expect(dpl.checkout(mockingbird)).to eq true
+
+    dpl.return(mockingbird)
+
+    expect(dpl.checkout(mockingbird)).to eq true
   end
 
   xit 'can return the most popular book' do
-
+    #code goes here
+    expect(dpl.most_popular_book).to eq(book)
   end
 end
