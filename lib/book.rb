@@ -4,8 +4,8 @@ class Book
               :publication_year
 
   def initialize(data)
-    @title = data[:title]
-    @author = (data[:author_first_name] + " " + data[:author_last_name])
+    @title            = data[:title]
+    @author           = (data[:author_first_name] + " " + data[:author_last_name])
     @publication_date = data[:publication_date]
     @publication_year = only_year
   end

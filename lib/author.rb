@@ -3,7 +3,7 @@ class Author
               :books
 
   def initialize(data)
-    @name = (data[:first_name] + " " + data[:last_name])
+    @name  = (data[:first_name] + " " + data[:last_name])
     @books = []
   end
 
