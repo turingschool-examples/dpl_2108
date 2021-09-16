@@ -19,21 +19,21 @@ describe Book do
   describe '#title' do
     it 'returns the title of the book' do
 
-    expect(@book.title).to eq()
+    expect(@book.title).to eq('To Kill a Mockingbird')
     end
   end
 
   describe '#author' do
     it 'returns the author of the book' do
 
-    expect(@book.author).to eq()
+    expect(@book.author).to eq('Harper Lee')
     end
   end
 
   describe '#publication_year' do
     it 'returns the publication year of the book' do
 
-    expect(@book.publication_year).to eq()
+    expect(@book.publication_year).to eq('1960')
     end
   end
 end
