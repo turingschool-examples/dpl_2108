@@ -10,7 +10,7 @@ class Author
     @books = []
   end
 
-  def write
-
+  def write(title, publication_date)
+    Book.new({:title => title, :publication_date => publication_date})
   end
 end
