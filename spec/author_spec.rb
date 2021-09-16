@@ -26,7 +26,15 @@ describe Author do
       author = Author.new(@author_info)
 
       expect(author.name).to eq("Charlotte Bronte")
-    end 
+    end
+  end
+
+  describe '#books' do
+    it 'returns an array of books the author wrote' do
+      author = Author.new(@author_info)
+
+      expect(author.books).to eq([book_1, book_2])
+    end
   end
 
 end
