@@ -15,7 +15,7 @@ class Book
 
 def author_name
   @author_name = @author_first_name + " " + @author_last_name
-end
+end 
 
 def publication_year
   @publication_date[9..13]
