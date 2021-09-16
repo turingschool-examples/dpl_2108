@@ -18,11 +18,16 @@ RSpec.describe Author do
   it 'has a write method that returns an instance of Book' do
      charlotte_bronte = Author.new({first_name: "Charlotte", last_name: "Bronte"})
      jane_eyre = charlotte_bronte.write("Jane Eyre", "October 16, 1847")
+     villette = charlotte_bronte.write("Villette", "1853")
 
      expect(jane_eyre.title).to eq("Jane Eyre")
 
      charlotte_bronte.publish(jane_eyre)
 
-     expect(charlotte_bronte.books).to eq([])
+     expect(charlotte_bronte.books).to eq([jane_eyre])
+
+     charlotte_bronte.publish(villette)
+
+     expect(charlotte_bronte.books).to eq([jane_eyre, villette])
   end
 end

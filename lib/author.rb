@@ -1,3 +1,5 @@
+require './lib/book'
+
 class Author
   attr_reader :first_name,
               :last_name,
@@ -10,6 +12,19 @@ class Author
     @books      = []
   end
 
-  def write(name, books)
+  def title
   end
+
+  def publish
+
+  end
+
+  def write(title, publish)
+    #this is doing what I want in pry but I can't make it work in atom
+    # require "pry"; binding.pry
+      @books << title
+      @books << publish
+  end
+
+
 end
