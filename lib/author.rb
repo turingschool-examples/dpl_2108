@@ -14,4 +14,14 @@ class Author
     @book_array
   end
 
+  def write(title, publication_date)
+    book_info = {
+                 author_first_name: @first_name,
+                 author_last_name: @last_name,
+                 title: title,
+                 publication_date: publication_date
+                }
+    Book.new(book_info)
+  end
+
 end
