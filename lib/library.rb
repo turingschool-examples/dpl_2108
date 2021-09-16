@@ -1,6 +1,8 @@
 class Library
 
-  attr_reader :name
+  attr_reader :name,
+              :books,
+              :authors
 
   def initialize(name)
     @name = name
@@ -15,5 +17,5 @@ class Library
   def publication_time_frame_for(author)
 
   end
-  
+
 end
