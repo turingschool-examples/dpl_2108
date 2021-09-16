@@ -1,8 +1,7 @@
 # frozen_string_literal: true
 
 class Author
-  attr_reader :name,
-              :books
+  attr_reader :books
 
   def initialize(info)
     @first_name   = info[:first_name]
