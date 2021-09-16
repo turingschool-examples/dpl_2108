@@ -21,13 +21,25 @@ RSpec.describe Author do
                             last_name: "Bronte"})
     books = []
   expect(charlotte_bronte.books).to eq([])
-  end 
+  end
+
+  xit 'can write books' do
+    charlotte_bronte = Author.new({first_name: "Charlotte",
+                            last_name: "Bronte"})
+    books = []
+    # jane_eyre = Book.new({title: 'Jane Eyre',
+    #                       author_first_name: 'Charlotte',
+    #                       author_last_name: 'Bronte',
+    #                       publication_date: 'October 16, 1847'})
+    #
+    # jane_eyre = charlotte_bronte.write("Jane Eyre", "October 16, 1847")
+
+  expect(charlotte_bronte.write).to eq('Jane Eyre', 'October 16, 1847')
+
+  end
 end
 
-#
-# pry(main)> charlotte_bronte.books
-# #=> []
-#
+
 
 # The write method must take two Strings as arguments and return an instance of Book.
 
