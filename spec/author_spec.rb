@@ -33,11 +33,11 @@ describe Author do
 
     charlotte_bronte.publish(jane_eyre)
 
-    expect(charlotte_bronte.books).to eq(jane_eyre)
+    expect(charlotte_bronte.books).to eq([jane_eyre])
 
     villette = charlotte_bronte.write("Villette", "1853")
 
-    harlotte_bronte.publish(villette)
+    charlotte_bronte.publish(villette)
 
     expect(charlotte_bronte.books).to eq([jane_eyre, villette])
   end
