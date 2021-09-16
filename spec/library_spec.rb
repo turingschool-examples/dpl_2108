@@ -66,6 +66,7 @@ describe Library do
 
   describe '#checkout' do
     it 'checks out a book' do
+      @dpl.add_author(@charlotte_bronte)
       chicken_little = Author.new({first_name: "Chicken", last_name: "Little"})
       chickens_and_planes = chicken_little.write("Chickens and Planes", "2010")
 
@@ -77,6 +78,9 @@ describe Library do
 
   describe '#checked_out_books' do
     it 'shows all checked out books' do
+      @dpl.add_author(@charlotte_bronte)
+      @dpl.add_author(@harper_lee)
+
       @dpl.checkout(@jane_eyre)
 
       expect(@dpl.checked_out_books).to eq([@jane_eyre])
@@ -88,13 +92,16 @@ describe Library do
   end
 
   describe '#return' do
-    it 'returns a book from being checked out'
-    @dpl.checkout(@jane_eyre)
-    @dpl.checkout(@mockingbird)
+    it 'returns a book from being checked out' do
+      @dpl.add_author(@charlotte_bronte)
+      @dpl.add_author(@harper_lee)
+      @dpl.checkout(@jane_eyre)
+      @dpl.checkout(@mockingbird)
+      
+      @dpl.return(@mockingbird)
 
-    @dpl.return(@mockingbird)
-
-    expect(@dpl.checked_out_books).to eq(@jane_eyre)
-    expect(@dpl.checkout(@mockingbird)).to eq(true)
+      expect(@dpl.checked_out_books).to eq([@jane_eyre])
+      expect(@dpl.checkout(@mockingbird)).to eq(true)
+    end
   end
 end
