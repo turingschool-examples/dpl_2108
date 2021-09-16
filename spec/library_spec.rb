@@ -21,4 +21,16 @@ describe Library do
     end
   end
 
+  describe '#add_author' do
+    it 'can add authors to the authors array' do
+      dpl = Library.new("Denver Public Library")
+      charlotte_bronte = Author.new({first_name: "Charlotte", last_name: "Bronte"})
+      harper_lee = Author.new({first_name: "Harper", last_name: "Lee"})
+      dpl.add_author(charlotte_bronte)
+      dpl.add_author(harper_lee)
+
+      expect(dpl.authors).to eq([charlotte_bronte, harper_lee])
+    end
+  end
+
 end
