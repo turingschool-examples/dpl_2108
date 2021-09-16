@@ -29,8 +29,8 @@ class Author
     years = books.map do |book|
       book.publication_year
     end
-    pub_hash[:start] = years.min
-    pub_hash[:end] = years.max
+    pub_hash[:start]  = years.min
+    pub_hash[:end]    = years.max
     pub_hash
   end
 end

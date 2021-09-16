@@ -1,6 +1,7 @@
 require './lib/library'
 require './lib/author'
 
+
 RSpec.describe Library do
   before(:each) do
     @dpl = Library.new("Denver Public Library")
@@ -45,5 +46,35 @@ RSpec.describe Library do
 
     expect(@dpl.publication_time_frame_for(@charlotte_bronte)).to eq({:start=>"1847", :end=>"1857"})
     expect(@dpl.publication_time_frame_for(@harper_lee)).to eq({:start=>"1960", :end=>"1960"})
+  end
+
+  it 'can check books out' do
+    expect(@dpl.checkout(@mockingbird)).to eq(false)
+    expect(@dpl.checkout(@jane_eyre)).to eq(false)
+
+    @dpl.add_author(@charlotte_bronte)
+    @dpl.add_author(@harper_lee)
+
+    expect(@dpl.checkout(@jane_eyre)).to eq(true)
+    expect(@dpl.checked_out_books).to eq([@jane_eyre])
+    expect(@dpl.checkout(@jane_eyre)).to eq(false)
+
+    @dpl.return(@jane_eyre)
+    expect(@dpl.checked_out_books).to eq([])
+
+    @dpl.checkout(@jane_eyre)
+    @dpl.checkout(@villette)
+    expect(@dpl.checked_out_books).to eq([@jane_eyre, @villette])
+
+    @dpl.checkout(@mockingbird)
+    @dpl.return(@mockingbird)
+    @dpl.checkout(@mockingbird)
+    @dpl.return(@mockingbird)
+    @dpl.checkout(@mockingbird)
+
+    expect(@dpl.most_popular_book).to eq(@mockingbird)
+
+    @dpl.return(@mockingbird)
+    expect(@dpl.most_popular_book).to eq(@mockingbird)
   end
 end
