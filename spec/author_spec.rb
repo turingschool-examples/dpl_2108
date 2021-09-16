@@ -31,6 +31,16 @@ RSpec.describe 'Author' do
     villette = @charlotte_bronte.write("Villette", "1853")
     @charlotte_bronte.publish(villette)
     expect(@charlotte_bronte.books).to eq([jane_eyre, villette])
+  end
 
+  it 'can return publication range' do
+    jane_eyre = @charlotte_bronte.write("Jane Eyre", "October 16, 1847")
+    @charlotte_bronte.publish(jane_eyre)
+
+    expect(@charlotte_bronte.books).to eq([jane_eyre])
+
+    villette = @charlotte_bronte.write("Villette", "1853")
+    @charlotte_bronte.publish(villette)
+    expect(@charlotte_bronte.publication_range).to eq({:start=>"1847", :end=>"1853"})
   end
 end

@@ -23,4 +23,14 @@ class Author
   def publish(book)
     @books << book
   end
+
+  def publication_range
+    pub_hash = {}
+    years = books.map do |book|
+      book.publication_year
+    end
+    pub_hash[:start] = years.min
+    pub_hash[:end] = years.max
+    pub_hash
+  end
 end
