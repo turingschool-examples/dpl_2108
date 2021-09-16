@@ -10,12 +10,14 @@ describe Author do
     expect(charlotte_bronte).to be_an_instance_of(Author)
   end
 
-  xit 'attributes' do
-    whatever = Whatever.new(what, ever)
-    expect(whatever.first_thing).to eq('what')
-    expect(theater.second_thing).to eq('ever')
+  it 'attributes' do
+    charlotte_bronte = Author.new({first_name: "Charlotte",
+       last_name: "Bronte"})
+
+    eexpect(charlotte_bronte.name).to eq("Charlotte Bronte")
+    expect(charlotte_bronte.books).to eq([])
   end
 
-  it 'does things' do
+  xit 'does things' do
   end
 end
