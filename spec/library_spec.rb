@@ -58,4 +58,20 @@ describe Library do
     expect(dpl.publication_time_frame_for(charlotte_bronte)).to eq({:start=>"1847", :end=>"1857"})
     expect(dpl.publication_time_frame_for(harper_lee)).to eq({:start=>"1960", :end=>"1960"})
   end
+
+  xit 'can checkout books' do
+
+  end
+
+  xit 'can return a lits of checked out books' do
+
+  end
+
+  xit 'can return a book' do
+
+  end
+
+  xit 'can return the most popular book' do
+
+  end
 end
