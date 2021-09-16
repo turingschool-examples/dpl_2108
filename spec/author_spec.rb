@@ -10,7 +10,7 @@ describe Author do
     expect(charlotte_bronte).to be_an_instance_of(Author)
   end
 
-  it 'attributes' do
+  it 'has attributes' do
     charlotte_bronte = Author.new({first_name: "Charlotte",
        last_name: "Bronte"})
 
