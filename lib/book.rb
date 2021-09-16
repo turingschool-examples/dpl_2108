@@ -9,4 +9,8 @@ class Book
     @title = info[:title]
     @publication_date = info[:publication_date]
   end
+
+  def author
+    @author_first_name + " " + @author_last_name
+  end
 end
