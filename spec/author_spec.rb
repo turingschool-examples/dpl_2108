@@ -27,4 +27,10 @@ describe Author do
     jane_eyre = @charlotte_bronte.write("Jane Eyre", "October 16, 1847")
     expect(jane_eyre.title).to eq("Jane Eyre")
   end
+
+  it 'can publish the book' do
+    jane_eyre = @charlotte_bronte.write("Jane Eyre", "October 16, 1847")
+    @charlotte_bronte.publish
+    expect(@charlotte_bronte.books).to eq([jane_eyre])
+  end
 end
