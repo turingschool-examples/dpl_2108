@@ -13,4 +13,12 @@ class Author
   def name
     @first_name + " " + @last_name
   end
+
+  def write(title, date)
+    Book.new({first_name: @first_name,
+              last_name: @last_name,
+              title: title,
+              date: date
+            })
+  end
 end

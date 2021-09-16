@@ -17,4 +17,9 @@ describe Author do
   it 'starts with no books written' do
     expect(@charlotte_bronte.books).to eq([])
   end
+
+  it 'can write a book' do
+    jane_eyre = @charlotte_bronte.write("Jane Eyre", "October 16, 1847")
+    expect(jane_eyre).to be_an_instance_of(Book)
+  end
 end
