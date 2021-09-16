@@ -22,4 +22,9 @@ describe Author do
     jane_eyre = @charlotte_bronte.write("Jane Eyre", "October 16, 1847")
     expect(jane_eyre).to be_an_instance_of(Book)
   end
+
+  it 'can return the title of the book' do
+    jane_eyre = @charlotte_bronte.write("Jane Eyre", "October 16, 1847")
+    expect(jane_eyre.title).to eq("Jane Eyre")
+  end
 end
