@@ -5,11 +5,11 @@ class Library
               :checked_out_books
 
   def initialize(name)
-    @name = name
-    @authors = []
-    @books = []
+    @name              = name
+    @authors           = []
+    @books             = []
     @checked_out_books = []
-    @most_popular = nil
+    @most_popular      = nil
   end
 
   def add_author(author)
@@ -53,9 +53,9 @@ class Library
   end
 
   def popularity(book)
-    jane_eyre_popularity = 0
-    professor_popularity = 0
-    villette_popularity = 0
+    jane_eyre_popularity   = 0
+    professor_popularity   = 0
+    villette_popularity    = 0
     mockingbird_popularity = 0
 
     if book == @jane_eyre
