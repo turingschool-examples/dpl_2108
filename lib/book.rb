@@ -1,7 +1,5 @@
 class Book
   attr_reader :title
-              # :author_first_name,
-              # :author_last_name
 
   def initialize(book_info)
     @title             = book_info[:title]
@@ -16,7 +14,5 @@ class Book
 
   def publication_year
     @publication_date.reverse[0..3].reverse
-
   end
-
 end
