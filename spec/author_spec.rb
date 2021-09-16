@@ -30,7 +30,7 @@ describe Author do
 
   it 'can publish the book' do
     jane_eyre = @charlotte_bronte.write("Jane Eyre", "October 16, 1847")
-    @charlotte_bronte.publish
+    @charlotte_bronte.publish(jane_eyre)
     expect(@charlotte_bronte.books).to eq([jane_eyre])
   end
 end

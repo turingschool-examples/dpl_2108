@@ -21,4 +21,8 @@ class Author
               date: date
             })
   end
+
+  def publish(book)
+    @books << book
+  end
 end
