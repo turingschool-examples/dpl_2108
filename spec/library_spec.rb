@@ -28,7 +28,6 @@ RSpec.describe Library do
   end
 
   it 'can add authors' do
-
     @dpl.add_author(@charlotte_bronte)
     @dpl.add_author(@harper_lee)
 
