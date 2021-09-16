@@ -25,5 +25,9 @@ RSpec.describe Author do
     expect(jane_eyre.title).to eq("Jane Eyre")
   end
 
+  it "#publish" do
+    @charlotte_bronte.publish(jane_eyre)
 
+    expect(@charlotte_bronte.books.to eq(jayne_eyre)
+  end
 end

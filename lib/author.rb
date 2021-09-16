@@ -11,9 +11,12 @@ class Author
     "#{@first_name} #{@last_name}"
   end
 
-  def write(book_title, book_publication_date)
-    
+  def write(book_title, publication_date)
+    Book.new({author_first_name: @first_name, author_last_name: @last_name, title: book_title, publication_date: publication_date})
   end
 
+  def publish(book)
+    @books << book
+  end
 
 end

@@ -1,4 +1,5 @@
 class Book
+  attr_accessor :title
 
   def initialize(info)
     @author_first_name = info[:author_first_name]
