@@ -109,13 +109,12 @@ describe Library do
     it 'returns the most popular book' do
       @dpl.add_author(@charlotte_bronte)
       @dpl.add_author(@harper_lee)
+      @dpl.checkout(@mockingbird)
+      @dpl.return(@mockingbird)
+      @dpl.checkout(@mockingbird)
+      @dpl.return(@mockingbird)
       @dpl.checkout(@jane_eyre)
-      @dpl.checkout(@mockingbird)
-      @dpl.return(@mockingbird)
-      @dpl.checkout(@mockingbird)
-      @dpl.return(@mockingbird)
       @dpl.return(@jane_eyre)
-      @dpl.checkout(@jane_eyre)
       @dpl.checkout(@mockingbird)
 
       expect(@dpl.most_popular_book).to eq(@mockingbird)
