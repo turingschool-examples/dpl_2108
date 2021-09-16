@@ -1,5 +1,6 @@
 require './lib/book'
 require './lib/author'
+require './lib/library'
 
 RSpec.describe Author do
   it 'exists' do
