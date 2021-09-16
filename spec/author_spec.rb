@@ -9,6 +9,7 @@ describe Author do
       last_name: "Bronte"
       })
   end
+  
   describe '#initialize' do
     it 'exists' do
       expect(@charlotte_bronte).to be_an_instance_of Author

@@ -11,6 +11,7 @@ describe Book do
        publication_date: "July 11, 1960"
        })
     end
+    
     it 'exists' do
       expect(@book).to be_an_instance_of Book
     end
