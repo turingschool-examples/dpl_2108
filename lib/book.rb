@@ -11,6 +11,6 @@ attr_reader :title,
 
   def publication_year
     array_year = publication_date.split(' ')
-    array_year[2]
+    array_year.last
   end
 end
