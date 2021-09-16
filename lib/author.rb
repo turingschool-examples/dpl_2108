@@ -20,6 +20,5 @@ class Author
 
   def publish(title)
     @books << title
-    require "pry"; binding.pry
   end
 end
